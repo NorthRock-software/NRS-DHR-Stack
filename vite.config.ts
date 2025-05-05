@@ -1,4 +1,4 @@
-// import deno from '@deno/vite-plugin';
+import deno from '@deno/vite-plugin';
 import { defineConfig } from 'vite';
 import { reactRouter } from '@react-router/dev/vite';
 import tailwindcss from '@tailwindcss/vite';
@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
 export default defineConfig({
 	plugins: [
-		// deno(),
+		deno(),
 		tailwindcss(),
 		// Run the react-compiler on .tsx files only when bundling
 		// {
@@ -23,6 +23,13 @@ export default defineConfig({
 	],
 	server: {
 		host: true,
+		port: Deno.env.get('PORT') ? parseInt(Deno.env.get('PORT')!) : 3000,
+	},
+	ssr: {
+		resolve: {
+			conditions: ['module', 'deno', 'node', 'development|production'],
+			externalConditions: ['deno', 'node'],
+		},
 	},
 	// base: "./",
 	// root: "./",

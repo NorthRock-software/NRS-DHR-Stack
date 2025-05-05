@@ -58,4 +58,28 @@ deno task compile:linux
 
 ---
 
+## Inspirations
+- [react-router-hono-server](https://github.com/rphlmr/react-router-hono-server)
+- [hono-react-router-adapter](https://github.com/yusukebe/hono-react-router-adapter)
+- [@hono/vite-dev-server](https://github.com/honojs/vite-plugins/tree/main/packages/dev-server)
+- [react-router-deno-template](https://github.com/redabacha/react-router-deno-template/tree/main)
+
+@react‑router/fs‑routes	MIT
+hono	MIT
+isbot	Unlicense
+react	MIT
+react‑dom	MIT
+react‑router	MIT
+@deno/vite‑plugin	MIT
+@hono/node‑server	MIT
+@hono/node‑ws	MIT
+@react‑router/dev	MIT
+@react‑router/node	MIT
+@tailwindcss/vite	MIT
+@types/node	MIT
+@types/react	MIT
+@types/react‑dom	MIT
+react‑router‑devtools	MIT
+tailwindcss	MIT
+
 Built with ❤️ by NorthRock software.

@@ -12,7 +12,7 @@ if (!_mode || _mode !== 'development' && _mode !== 'production') {
 	console.log(colors.yellow('No MODE environment variable set, using default mode "development"'));
 }
 
-const PORT = Number(_port ?? 3000);
+const PORT = parseInt(_port ?? '3000');
 const CWD = Deno.cwd();
 const MODE: Mode = _mode as Mode ?? 'development';
 const IS_PROUCTION = MODE === 'production';

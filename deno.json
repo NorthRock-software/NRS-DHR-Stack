@@ -1,18 +1,25 @@
 {
 	"imports": {
+	  "~/": "./app/",
 		"@std/fmt": "jsr:@std/fmt@^1.0.7",
 		"@std/path": "jsr:@std/path@^1.0.9",
 		"react": "npm:react",
 		"react-dom": "npm:react-dom",
 		"react-router": "npm:react-router",
+		"vite": "npm:vite",
 		"isbot": "npm:isbot"
 	},
 	"compilerOptions": {
+		"lib": ["deno.window", "dom", "dom.iterable", "deno.ns"],
 		"jsx": "react-jsx",
-		"jsxImportSource": "react"
+		"jsxImportSource": "react",
+		"jsxImportSourceTypes": "@types/react",
+		"rootDirs": [".", "./.react-router/types"],
+		"types": ["vite/client"]
 	},
-	"unstable": ["kv", "temporal", "worker-options"],
 	"nodeModulesDir": "auto",
+	"exclude": ["build/"],
+	"unstable": ["kv", "temporal", "worker-options"],
 	"fmt": {
 		"useTabs": true,
 		"lineWidth": 120,

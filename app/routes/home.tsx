@@ -1,5 +1,5 @@
-import type { Route } from './+types/home';
-import { Welcome } from '../welcome/welcome';
+import type { Route } from './+types/home.ts';
+import { Welcome } from '~/welcome/welcome.tsx';
 import { Await, useLoaderData } from 'react-router';
 import * as React from 'react';
 
@@ -19,7 +19,7 @@ export async function loader({ context }: Route.LoaderArgs) {
 		)
 	);
 
-	let criticalData = await new Promise((res) => setTimeout(() => res('this data is awaited on the server'), 300));
+	let criticalData = await new Promise((res) => setTimeout(() => res('this data is awaited on the server'), 200));
 	return { nonCriticalData, criticalData, nrs: context.nrs_test };
 }
 

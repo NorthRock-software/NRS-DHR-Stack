@@ -1,45 +1,79 @@
 import stack from './main.png';
+// import stack_public from '/main.png';
 import { Await, useLoaderData } from 'react-router';
-import {Suspense} from 'react';
+import { Suspense } from 'react';
 
 export function Welcome() {
 	const { nonCriticalData, criticalData, nrs } = useLoaderData();
-  // console.log({ nonCriticalData, criticalData, nrs });
+	// console.log({ nonCriticalData, criticalData, nrs });
+
+	const NonCriticalData = () => {
+		return (
+			<div>
+				Non critical data (loads after 4 sec):
+			</div>
+		);
+	};
 
 	return (
 		<main className='flex items-center justify-center pt-16 pb-4'>
 			<div className='flex-1 flex flex-col items-center gap-16 min-h-0'>
 				<header className='flex flex-col items-center gap-9'>
 					<div className='w-[500px] max-w-[100vw] p-4'>
-							{/* src={logoLight}
+						{
+							/* src={logoLight}
 							className='block w-full dark:hidden'
 							src={logoDark}
-							className='hidden w-full dark:block' */}
+							className='hidden w-full dark:block' */
+						}
 						<img
 							src={stack}
 							alt='DHR Stack'
 							className='w-full'
 						/>
+						{
+							/* <img
+							src={stack_public}
+							alt='DHR Stack'
+							className='w-full'
+						/> */
+						}
 					</div>
 				</header>
-				<div className='max-w-[400px] w-full space-y-6 px-4'>
+				<div className='max-w-[500px] w-full space-y-6 px-4'>
 					<nav className='rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4'>
-						<p className='text-xl leading-6 text-gray-700 dark:text-gray-200 text-center'>
-							DHR Stack by NorthRock software
-						</p>
+						<div className='text-3xl font-bold leading-8 text-gray-700 dark:text-gray-200 text-center'>
+							DHR Stack by<br></br> NorthRock software
+						</div>
 						<div>
-							This is a simple example of a React Router app with server-side rendering.
-							<br />
-							<div>
-								<h1>Streaming example</h1>
-								<br />
-								<h2>Critical data: 	<br />{criticalData}</h2>
-								<br />
-								<Suspense fallback={<div>Non critical data (loads after 4 sec): <br />Loading...</div>}>
-									<Await resolve={nonCriticalData}>
-										{(value) => <h3>Non critical data (loads after 4 sec): <br />{value}</h3>}
-									</Await>
-								</Suspense>
+							<p className='mb-8'>
+								This is a simple example of a React Router app with server-side rendering.
+							</p>
+							<div className='flex flex-col gap-4'>
+								<div className='text-xl font-bold underline'>Streaming example</div>
+
+								<div className='font-bold'>
+									<div className=''>
+										Critical data (waited for 300ms): {' '}
+									</div>
+									<div className='text-red-400'>
+										{criticalData}
+									</div>
+								</div>
+								<div className='font-bold'>
+									<NonCriticalData />
+									<div className='text-gray-400'>
+										<Suspense fallback='Loading...'>
+											<Await resolve={nonCriticalData}>
+												{(value) => (
+													<>
+														{value}
+													</>
+												)}
+											</Await>
+										</Suspense>
+									</div>
+								</div>
 							</div>
 						</div>
 					</nav>
