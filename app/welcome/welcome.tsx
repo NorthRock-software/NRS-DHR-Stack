@@ -1,4 +1,4 @@
-import stack from '/main.png';
+import stack from './main.png';
 import { Await, useLoaderData } from 'react-router';
 import {Suspense} from 'react';
 
