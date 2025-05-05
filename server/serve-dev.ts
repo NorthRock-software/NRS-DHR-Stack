@@ -1,4 +1,5 @@
 //? https://hono.dev/docs/getting-started/nodejs
+
 import type { AppLoadContext, ServerBuild } from 'react-router';
 import type { ViteDevServer } from 'vite';
 import type { Context, Next } from 'hono';
@@ -35,15 +36,10 @@ const importDevBuild = () => {
 const requestHandlerVite = () => {
 	return createMiddleware((c, next) => {
 		return new Promise((resolve) => {
-			// viteDevServer.middlewares(c.req.raw, c.res, () => {
-			//   resolve(next());
-			// });
 			viteDevServer.middlewares(
 				c.env.incoming,
 				c.env.outgoing,
 				() => resolve(next()),
-				// resolve,
-				// resolve(next()),
 			);
 			return;
 		});
@@ -54,11 +50,6 @@ const requestHandlerVite = () => {
 export const routesDev = new Hono();
 
 // --- Routes ---
-//* handling chrome devtools - development only
-routesDev.get(
-	'/.well-known/*',
-	() => new Response('Not Found', { status: 404 }),
-);
 routesDev.use('*', serveStatic({ root: './public' }));
 routesDev.use('*', requestHandlerVite());
 routesDev.use(
@@ -66,10 +57,9 @@ routesDev.use(
 	requestHandlerReactRouter({
 		mode: MODE,
 		build: await importDevBuild() as ServerBuild,
-		// build: await importDevBuild() as ServerBuild,
 		// @ts-ignore: somemmissing properties
 		getLoadContext(c) {
-			return { context: c.env, db: 'db_test', nrs_test: 'nrs_test_context' };
+			return { context: c.env, db: 'ID: 89adw8hdaw89gv89awd89jhawd89ajwd89' };
 		},
 	}),
 );

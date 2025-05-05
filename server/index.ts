@@ -13,8 +13,14 @@ import { languageDetector } from 'hono/language';
 import { customLogger, IS_PROUCTION, MODE, PORT } from './helpers.ts';
 
 const app = new Hono({
-	strict: false,
+	strict: true,
 });
+
+//* handling chrome devtools
+app.get(
+	'/.well-known/*',
+	() => new Response('Not Found', { status: 404 }),
+);
 
 // --- Middlewares ---
 app.use(logger(customLogger));
@@ -27,6 +33,7 @@ app.use(
 );
 
 // --- Routes ---
+
 app.use(async (c, next) => {
 	await next();
 	c.header('X-Powered-By', 'React-Router and Hono');

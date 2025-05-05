@@ -8,6 +8,7 @@
     "npm:@deno/vite-plugin@^1.0.4": "1.0.4_vite@6.3.4__@types+node@22.15.3__picomatch@4.0.2_@types+node@22.15.3",
     "npm:@hono/node-server@^1.14.1": "1.14.1_hono@4.7.8",
     "npm:@hono/node-ws@^1.1.4": "1.1.4_@hono+node-server@1.14.1__hono@4.7.8_hono@4.7.8",
+    "npm:@react-router/dev@7.5.3": "7.5.3_react-router@7.5.3__react@19.1.0__react-dom@19.1.0___react@19.1.0_typescript@5.8.3_vite@6.3.4__@types+node@22.15.3__picomatch@4.0.2_@babel+core@7.27.1_react@19.1.0_react-dom@19.1.0__react@19.1.0_@types+node@22.15.3",
     "npm:@react-router/dev@^7.5.3": "7.5.3_react-router@7.5.3__react@19.1.0__react-dom@19.1.0___react@19.1.0_typescript@5.8.3_vite@6.3.4__@types+node@22.15.3__picomatch@4.0.2_@babel+core@7.27.1_react@19.1.0_react-dom@19.1.0__react@19.1.0_@types+node@22.15.3",
     "npm:@react-router/fs-routes@^7.5.3": "7.5.3_@react-router+dev@7.5.3__react-router@7.5.3___react@19.1.0___react-dom@19.1.0____react@19.1.0__typescript@5.8.3__vite@6.3.4___@types+node@22.15.3___picomatch@4.0.2__@babel+core@7.27.1__react@19.1.0__react-dom@19.1.0___react@19.1.0__@types+node@22.15.3_typescript@5.8.3_react-router@7.5.3__react@19.1.0__react-dom@19.1.0___react@19.1.0_vite@6.3.4__@types+node@22.15.3__picomatch@4.0.2_react@19.1.0_react-dom@19.1.0__react@19.1.0_@types+node@22.15.3",
     "npm:@react-router/node@^7.5.3": "7.5.3_react-router@7.5.3__react@19.1.0__react-dom@19.1.0___react@19.1.0_typescript@5.8.3_react@19.1.0_react-dom@19.1.0__react@19.1.0",

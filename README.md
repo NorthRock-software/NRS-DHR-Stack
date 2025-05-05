@@ -13,20 +13,27 @@ A modern template for building full-stack React applications using Deno, Hono an
 #### Install Deno >2.3.1 [more options](https://docs.deno.com/runtime/getting_started/installation/):
 
 Linux:
+
 ```bash
 curl -fsSL https://deno.land/install.sh | sh
 ```
+
 Windows:
+
 ```bash
 scoop install deno
 # or
 winget install DenoLand.Deno
 ```
+
 macOS:
+
 ```bash
 brew install deno
 ```
+
 #### Install dependencies
+
 ```bash
 deno install --allow-scripts
 ```

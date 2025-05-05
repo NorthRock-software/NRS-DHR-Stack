@@ -17,15 +17,12 @@ const CWD = Deno.cwd();
 const MODE: Mode = _mode as Mode ?? 'development';
 const IS_PROUCTION = MODE === 'production';
 const IS_EXECUTABLE = Deno.build.standalone;
-// const CLIENT_BUILD_PATH = path.resolve(CWD, 'build', 'client');
 let CLIENT_BUILD_PATH = './build/client';
 let CLIENT_ASSETS_PATH = './build/client/assets';
 const EXECUTABLE_ROOT_DIR = IS_EXECUTABLE ? path.join(import.meta.dirname ?? '', '..') : undefined;
 const SERVER_BUILD_PATH = path.resolve(CWD, 'build', 'server');
 let BUILD = path.toFileUrl(SERVER_BUILD_PATH + '/index.js').href;
 if (EXECUTABLE_ROOT_DIR) {
-	// CLIENT_BUILD_PATH = path.join(EXECUTABLE_ROOT_DIR, 'build', 'client');
-	// CLIENT_ASSETS_PATH = path.join(EXECUTABLE_ROOT_DIR, 'build', 'client', 'assets');
 	CLIENT_BUILD_PATH = EXECUTABLE_ROOT_DIR + '/build/client';
 	CLIENT_ASSETS_PATH = EXECUTABLE_ROOT_DIR + '/build/client/assets';
 	BUILD = path.toFileUrl(EXECUTABLE_ROOT_DIR + '/build/server/index.js').href;
