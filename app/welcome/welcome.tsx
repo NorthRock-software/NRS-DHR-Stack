@@ -4,8 +4,7 @@ import { Await, useLoaderData } from 'react-router';
 import { Suspense } from 'react';
 
 export function Welcome() {
-	const { nonCriticalData, criticalData, nrs } = useLoaderData();
-	// console.log({ nonCriticalData, criticalData, nrs });
+	const { nonCriticalData, criticalData } = useLoaderData();
 
 	const NonCriticalData = () => {
 		return (
@@ -46,11 +45,11 @@ export function Welcome() {
 							DHR Stack by<br></br> NorthRock software
 						</div>
 						<div>
-							<p className='mb-8'>
+							<p className='mb-12'>
 								This is a simple example of a React Router app with server-side rendering.
 							</p>
 							<div className='flex flex-col gap-4'>
-								<div className='text-xl font-bold underline'>Streaming example</div>
+								<div className='text-xl font-bold'>Streaming example</div>
 
 								<div className='font-bold'>
 									<div className=''>
@@ -62,7 +61,7 @@ export function Welcome() {
 								</div>
 								<div className='font-bold'>
 									<NonCriticalData />
-									<div className='text-gray-400'>
+									<div className='text-yellow-400'>
 										<Suspense fallback='Loading...'>
 											<Await resolve={nonCriticalData}>
 												{(value) => (
