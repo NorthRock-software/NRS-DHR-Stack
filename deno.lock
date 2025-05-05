@@ -1,6 +1,7 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@std/cli@^1.0.17": "1.0.17",
     "jsr:@std/fmt@*": "1.0.7",
     "jsr:@std/fmt@^1.0.7": "1.0.7",
     "jsr:@std/path@*": "1.0.9",
@@ -34,6 +35,9 @@
     "npm:vite@^6.3.4": "6.3.4_@types+node@22.15.3_picomatch@4.0.2_@types+node@22.12.0"
   },
   "jsr": {
+    "@std/cli@1.0.17": {
+      "integrity": "e15b9abe629e17be90cc6216327f03a29eae613365f1353837fa749aad29ce7b"
+    },
     "@std/fmt@1.0.7": {
       "integrity": "2a727c043d8df62cd0b819b3fb709b64dd622e42c3b1bb817ea7e6cc606360fb"
     },
@@ -2736,6 +2740,7 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@std/cli@^1.0.17",
       "jsr:@std/fmt@^1.0.7",
       "jsr:@std/path@^1.0.9",
       "npm:isbot@*",

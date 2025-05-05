@@ -3,7 +3,7 @@
 import type { AppLoadContext, ServerBuild } from 'react-router';
 import type { ViteDevServer } from 'vite';
 import type { Context, Next } from 'hono';
-import * as colors from 'jsr:@std/fmt/colors';
+import * as colors from '@std/fmt/colors';
 import { createMiddleware } from 'hono/factory';
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';

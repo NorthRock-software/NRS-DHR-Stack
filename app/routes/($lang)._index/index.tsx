@@ -1,5 +1,5 @@
-import type { Route } from './+types/home.ts';
-import { Welcome } from '~/welcome/welcome.tsx';
+import type { Route } from './+types/index.ts';
+import { Welcome } from './components/welcome.tsx';
 import { useLoaderData } from 'react-router';
 
 export function meta({}: Route.MetaArgs) {

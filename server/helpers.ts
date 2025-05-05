@@ -1,5 +1,5 @@
-import * as path from 'jsr:@std/path';
-import * as colors from 'jsr:@std/fmt/colors';
+import * as path from '@std/path';
+import * as colors from '@std/fmt/colors';
 
 type Mode = 'development' | 'production';
 

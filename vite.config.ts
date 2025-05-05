@@ -2,6 +2,7 @@ import deno from '@deno/vite-plugin';
 import { defineConfig } from 'vite';
 import { reactRouter } from '@react-router/dev/vite';
 import tailwindcss from '@tailwindcss/vite';
+import { parseArgs } from '@std/cli/parse-args';
 
 // export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
 export default defineConfig({
@@ -25,15 +26,13 @@ export default defineConfig({
 		host: true,
 		port: Deno.env.get('PORT') ? parseInt(Deno.env.get('PORT')!) : 3000,
 	},
-	ssr: {
-		resolve: {
-			conditions: ['module', 'deno', 'node', 'development|production'],
-			externalConditions: ['deno', 'node'],
-		},
-	},
-	// base: "./",
-	// root: "./",
-	// publicDir: "./public",
+	//* this enables the use of deno in dev => "MODE=production react-router dev"
+	// ssr: {
+	// 	resolve: {
+	// 		conditions: ['module', 'deno', 'node', 'development|production'],
+	// 		externalConditions: ['deno', 'node'],
+	// 	},
+	// },
 	build: {
 		target: 'esnext',
 		assetsInlineLimit: 50_000,

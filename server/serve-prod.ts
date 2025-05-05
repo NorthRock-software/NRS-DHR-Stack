@@ -1,7 +1,7 @@
 import type { AppLoadContext, ServerBuild } from 'react-router';
 import type { Context } from 'hono';
-import * as colors from 'jsr:@std/fmt/colors';
-import * as path from 'jsr:@std/path';
+import * as colors from '@std/fmt/colors';
+// import * as path from 'jsr:@std/path';
 import { Hono } from 'hono';
 import { getConnInfo, serveStatic } from 'hono/deno';
 import {
@@ -66,13 +66,39 @@ routesProd.use(
 		},
 	}),
 );
-export const createHonoServerProd = (app: Hono, port: number) => {
+export const createHonoServerProd = async (app: Hono, port: number) => {
+	const abortController = new AbortController();
+
 	Deno.serve({
 		port: port,
+		signal: abortController.signal,
 		onListen({ hostname, port }) {
 			console.log(
 				colors.green(`--- Server running at http://${hostname}:${port} ---`),
 			);
 		},
 	}, app.fetch);
+
+	const handleShutdown = async (signal: Deno.Signal) => {
+		console.log(
+			colors.yellow(`\nReceived signal: ${signal}. Shutting down gracefully, please wait...`),
+		);
+
+		//* stop accepting new connections
+		abortController.abort();
+		// await closeDbConnections();
+
+		//* wait briefly for server to finish processing existing requests
+		await new Promise((resolve) => setTimeout(resolve, 500)); // grace period
+		console.log(colors.yellow('Shutdown complete.'));
+		Deno.exit(0);
+	};
+	if (Deno.build.os === 'windows') {
+		console.log(colors.green('Windows OS detected. Adding signal listeners...'));
+		Deno.addSignalListener('SIGINT', () => handleShutdown('SIGINT'));
+	} else {
+		console.log(colors.green('Linux/Unix OS detected. Adding signal listeners...'));
+		Deno.addSignalListener('SIGINT', () => handleShutdown('SIGINT'));
+		Deno.addSignalListener('SIGTERM', () => handleShutdown('SIGTERM'));
+	}
 };

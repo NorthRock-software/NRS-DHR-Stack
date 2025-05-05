@@ -1,8 +1,8 @@
 {
 	"imports": {
-	  "~/": "./app/",
 		"@std/fmt": "jsr:@std/fmt@^1.0.7",
 		"@std/path": "jsr:@std/path@^1.0.9",
+		"@std/cli": "jsr:@std/cli@^1.0.17",
 		"react": "npm:react",
 		"react-dom": "npm:react-dom",
 		"react-router": "npm:react-router",
@@ -10,13 +10,14 @@
 		"isbot": "npm:isbot"
 	},
 	"compilerOptions": {
-		"lib": ["deno.window", "dom", "dom.iterable", "deno.ns"],
+		"lib": ["deno.window", "dom", "esnext", "dom.iterable", "deno.ns"],
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
 		"jsxImportSourceTypes": "@types/react",
 		"rootDirs": [".", "./.react-router/types"],
 		"types": ["vite/client"]
 	},
+	"include": [".react-router/types/**/*"],
 	"nodeModulesDir": "auto",
 	"exclude": ["build/"],
 	"unstable": ["kv", "temporal", "worker-options"],
