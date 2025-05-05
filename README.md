@@ -1,3 +1,8 @@
+<div align="center">
+  <a href="https://northrock.software/">
+    <img src="https://github.com/NorthRock-software/DHR-Stack/blob/main/docs/images/main.png" width="400" height="auto" alt="DHR" />
+  </a>
+</div>
 
 # Welcome to the DHR-Stack !
 
