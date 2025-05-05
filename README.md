@@ -1,0 +1,49 @@
+
+# Welcome to the DHR-Stack !
+
+A modern template for building full-stack React applications using Deno, Hono and React Router.
+
+## Quick Start
+
+#### Install the Deno runtime [more options](https://docs.deno.com/runtime/getting_started/installation/):
+
+Linux:
+```bash
+curl -fsSL https://deno.land/install.sh | sh
+```
+Windows:
+```bash
+scoop install deno
+# or
+winget install DenoLand.Deno
+```
+macOS:
+```bash
+brew install deno
+```
+#### Install dependencies
+```bash
+deno install
+```
+
+### Development
+
+Start the development server:
+
+```bash
+deno task dev
+```
+
+Your application will be available at `http://localhost:3000`.
+
+## Building for Production
+
+Create a production build:
+
+```bash
+deno task compile:linux
+```
+
+---
+
+Built with ❤️ by NorthRock software.

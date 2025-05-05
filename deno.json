@@ -1,0 +1,28 @@
+{
+  "imports": {
+    "@std/fmt": "jsr:@std/fmt@^1.0.7",
+    "@std/path": "jsr:@std/path@^1.0.9"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "imports": {
+    "react": "npm:react",
+    "react-dom": "npm:react-dom",
+    "react-router": "npm:react-router",
+    "isbot": "npm:isbot",
+    "react-router": "npm:react-router"
+  },
+   "unstable":["kv", "temporal", "worker-options"],
+   "nodeModulesDir": "auto",
+   "fmt": {
+       "useTabs": true,
+       "lineWidth": 120,
+       "indentWidth": 4,
+       "semiColons": true,
+       "singleQuote": true,
+       "proseWrap": "preserve"
+     }
+}
