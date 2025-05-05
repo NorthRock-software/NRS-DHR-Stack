@@ -32,7 +32,7 @@ if (EXECUTABLE_ROOT_DIR) {
 }
 
 console.log({ IS_EXECUTABLE });
-console.log({ EXECUTABLE_ROOT_DIR });
+IS_EXECUTABLE && console.log({ EXECUTABLE_ROOT_DIR });
 
 const customLogger = (message: string, ...rest: string[]) => {
 	if (

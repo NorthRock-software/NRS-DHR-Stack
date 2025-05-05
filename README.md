@@ -10,7 +10,7 @@ A modern template for building full-stack React applications using Deno, Hono an
 
 ## Quick Start
 
-#### Install the Deno runtime [more options](https://docs.deno.com/runtime/getting_started/installation/):
+#### Install Deno >2.3.1 [more options](https://docs.deno.com/runtime/getting_started/installation/):
 
 Linux:
 ```bash
@@ -28,7 +28,7 @@ brew install deno
 ```
 #### Install dependencies
 ```bash
-deno install
+deno install --allow-scripts
 ```
 
 ### Development

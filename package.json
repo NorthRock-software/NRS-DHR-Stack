@@ -12,7 +12,7 @@
 
 		"compile": "deno compile -A --include test-folder --include build --env-file=.env.prod --icon ./public/ncon.ico --output ncon ./server/index.ts",
 		"compile:no-check": "deno compile -A --no-check --include test-folder --include build --env-file=.env.prod --icon ./public/ncon.ico --output ncon ./server/index.ts",
-		"compile:linux": "deno compile -A --target x86_64-unknown-linux-gnu --include test-folder --include build --env-file=.env.prod --output ncon ./server/index.ts"
+		"compile:linux": "deno compile -A --target x86_64-unknown-linux-gnu --include test-folder --include build --env-file=.env.prod --output ncon ./server/index.ts",
 		"compile:linux:no-check": "deno compile -A --target x86_64-unknown-linux-gnu --no-check --include test-folder --include build --env-file=.env.prod --output ncon ./server/index.ts"
 	},
 	"dependencies": {
