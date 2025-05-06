@@ -1,5 +1,5 @@
-// import * as path from "jsr:@std/path";
-// // import { walk } from "jsr:@std/fs/walk"; //* https://jsr.io/@std/fs/doc/~/walk
+import * as path from '@std/path';
+import { walk } from '@std/fs/walk'; //* https://jsr.io/@std/fs/doc/~/walk
 import * as colors from 'jsr:@std/fmt/colors';
 import { Hono } from 'hono';
 import { logger } from 'hono/logger';
@@ -10,7 +10,7 @@ import { languageDetector } from 'hono/language';
 // import { csrf } from "hono/csrf"; //* https://hono.dev/docs/middleware/builtin/csrf
 // import { cors } from 'hono/cors'
 // import { etag } from 'hono/etag'
-import { customLogger, IS_PROUCTION, MODE, PORT } from './helpers.ts';
+import { customLogger, CWD, IS_PROUCTION, MODE, PORT } from './helpers.ts';
 
 const app = new Hono({
 	strict: true,
@@ -33,10 +33,23 @@ app.use(
 );
 
 // --- Routes ---
+app.get('/api/files/:path', async (c, next) => {
+	const files = await Array.fromAsync(walk('.'));
+	const length = files.length;
+
+	// const { path } = c.req.param();
+	const path = c.req.param('path');
+	return c.json({
+		path,
+		CWD,
+		length,
+		// 	JSON.stringify(files),
+	});
+});
 
 app.use(async (c, next) => {
 	await next();
-	c.header('X-Powered-By', 'React-Router and Hono');
+	c.header('X-Powered-By', 'Deno, Hono & React-Router');
 });
 app.get('/ping', (c) => {
 	return c.json({ status: 'pong' });

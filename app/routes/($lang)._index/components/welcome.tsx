@@ -40,42 +40,36 @@ export function Welcome() {
 					</div>
 				</header>
 				<div className='max-w-[500px] w-full space-y-6 px-4'>
-					<nav className='rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4'>
+					<div className='flex flex-col gap-8 rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4'>
 						<div className='text-3xl font-bold leading-8 text-gray-700 dark:text-gray-200 text-center'>
 							DHR Stack by<br></br> NorthRock software
 						</div>
-						<div>
-							<p className='mb-12'>
-								This is a simple example of a React Router app with server-side rendering.
-							</p>
-							<div className='flex flex-col gap-4'>
-								<div className='text-xl font-bold'>Streaming example</div>
-
-								<div className='font-bold'>
-									<div className=''>
-										Critical data (waited for 300ms): {' '}
-									</div>
-									<div className='text-red-400'>
-										{criticalData}
-									</div>
+						<div className='flex flex-col gap-4'>
+							<div className='text-xl font-bold'>Streaming example</div>
+							<div className='font-bold'>
+								<div className=''>
+									Critical data (waited for 300ms): {' '}
 								</div>
-								<div className='font-bold'>
-									<NonCriticalData />
-									<div className='text-yellow-400'>
-										<Suspense fallback='Loading...'>
-											<Await resolve={nonCriticalData}>
-												{(value) => (
-													<>
-														{value}
-													</>
-												)}
-											</Await>
-										</Suspense>
-									</div>
+								<div className='text-red-400'>
+									{criticalData}
+								</div>
+							</div>
+							<div className='font-bold'>
+								<NonCriticalData />
+								<div className='text-yellow-400'>
+									<Suspense fallback='Loading...'>
+										<Await resolve={nonCriticalData}>
+											{(value) => (
+												<>
+													{value}
+												</>
+											)}
+										</Await>
+									</Suspense>
 								</div>
 							</div>
 						</div>
-					</nav>
+					</div>
 				</div>
 			</div>
 		</main>

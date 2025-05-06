@@ -1,6 +1,7 @@
 import type { Route } from './+types/index.ts';
 import { Welcome } from './components/welcome.tsx';
 import { useLoaderData } from 'react-router';
+// import * as path from "jsr:@std/path";
 
 export function meta({}: Route.MetaArgs) {
 	return [

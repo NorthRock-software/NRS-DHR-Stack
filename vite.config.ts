@@ -26,7 +26,7 @@ export default defineConfig({
 		host: true,
 		port: Deno.env.get('PORT') ? parseInt(Deno.env.get('PORT')!) : 3000,
 	},
-	//* this enables the use of deno in dev => "MODE=production react-router dev"
+	//* "MODE=production react-router dev"
 	// ssr: {
 	// 	resolve: {
 	// 		conditions: ['module', 'deno', 'node', 'development|production'],
