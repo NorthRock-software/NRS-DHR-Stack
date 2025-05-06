@@ -1,5 +1,5 @@
-import * as path from '@std/path';
-import { walk } from '@std/fs/walk'; //* https://jsr.io/@std/fs/doc/~/walk
+// import * as path from '@std/path';
+// import { walk } from '@std/fs/walk'; //* https://jsr.io/@std/fs/doc/~/walk
 import * as colors from 'jsr:@std/fmt/colors';
 import { Hono } from 'hono';
 import { logger } from 'hono/logger';
@@ -33,20 +33,6 @@ app.use(
 );
 
 // --- Routes ---
-app.get('/api/files/:path', async (c, next) => {
-	const files = await Array.fromAsync(walk('.'));
-	const length = files.length;
-
-	// const { path } = c.req.param();
-	const path = c.req.param('path');
-	return c.json({
-		path,
-		CWD,
-		length,
-		// 	JSON.stringify(files),
-	});
-});
-
 app.use(async (c, next) => {
 	await next();
 	c.header('X-Powered-By', 'Deno, Hono & React-Router');

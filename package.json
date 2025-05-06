@@ -2,6 +2,7 @@
 	"name": "dhr-stack",
 	"private": true,
 	"type": "module",
+	"version": "0.0.1",
 	"scripts": {
 		"dev": "NODE_ENV=development MODE=development deno run --env-file=.env.dev --watch -A ./server/index.ts",
 		"dev:no_hono": "MODE=development react-router dev",

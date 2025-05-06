@@ -47,12 +47,7 @@ export function Welcome() {
 						<div className='flex flex-col gap-4'>
 							<div className='text-xl font-bold'>Streaming example</div>
 							<div className='font-bold'>
-								<div className=''>
-									Critical data (waited for 300ms): {' '}
-								</div>
-								<div className='text-red-400'>
-									{criticalData}
-								</div>
+								Critical data (waited for 300ms): <span className='text-red-400'>{criticalData}</span>
 							</div>
 							<div className='font-bold'>
 								<NonCriticalData />
